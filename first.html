@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide Navbar</title>
+<link rel="stylesheet" type="text/css" href="slidestyle.css">
+<link href="https://fonts.googleapis.com/css?family=Jost:wght@500&display=swap" rele="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <input types="checkbox" id="chk" aria.hidden="true">
+        
+        <div id="login" class="Login">
+            
+            <fora>
+                <label for="chk" aria.hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Login</button>
+            </fora>
+            <div id="_signup" class="_login" >sign-up</div>
+        </div>
+
+        <div id="signup" class="signup">
+            <form action="signup.php" method="post">
+                <!-- Your form fields here -->
+            </form>
+            
+            <fora>
+                <label for="chk" aria.hidden="true" >Sign up</label>
+                <input type="text" name="txt" placeholder="User name" required="">
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Sign up</button>
+            </fora>
+            <div id="_login" class="_login" >login</div>
+        </div>
+
+        
+
+    <script>
+        var chk = document.getElementById("chk");
+        var toggleBtn1 = document.getElementById("_login");
+        var toggleBtn2 = document.getElementById("_signup");
+        var signup = document.getElementById('signup');
+        var login = document.getElementById('login');
+
+        function toggleDisplay() {
+            chk.checked = !chk.checked;
+            console.log(chk.checked);
+
+            if (!chk.checked) {
+                signup.style.display = 'none';
+                login.style.display = 'block';
+            } else {
+                signup.style.display = 'block';
+                login.style.display = 'none';
+            }
+        }
+
+        toggleBtn1.addEventListener("click", toggleDisplay);
+        toggleBtn2.addEventListener("click", toggleDisplay);
+    </script>
+</body>
+</html>
